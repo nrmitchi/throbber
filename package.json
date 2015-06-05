@@ -1,0 +1,10 @@
+{
+  "name": "throbber",
+  "version": "0.0.1",
+  "description": "Usage of slack throbber pen from codepen",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": ""
+}

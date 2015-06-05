@@ -1,0 +1,286 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(http://daneden.github.io/animate.css/animate.min.css);
+
+/**
+ * GENERAL
+ */
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  content: '';
+}
+
+/**
+ * MAIN
+ */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 100%;
+  color: #dbe2e9;
+
+  background:
+    -webkit-linear-gradient(45deg, hsla(206, 48%, 76%, 1) 0%, hsla(206, 48%, 76%, 0) 70%),
+    -webkit-linear-gradient(315deg, hsla(144, 58%, 100%, 1) 10%, hsla(144, 58%, 100%, 0) 80%),
+    -webkit-linear-gradient(225deg, hsla(193, 34%, 100%, 1) 10%, hsla(193, 34%, 100%, 0) 80%),
+    -webkit-linear-gradient(135deg, hsla(182, 0%, 44%, 1) 100%, hsla(182, 0%, 44%, 0) 70%);
+
+  background:
+    linear-gradient(45deg, hsla(206, 48%, 76%, 1) 0%, hsla(206, 48%, 76%, 0) 70%),
+    linear-gradient(135deg, hsla(144, 58%, 100%, 1) 10%, hsla(144, 58%, 100%, 0) 80%),
+    linear-gradient(225deg, hsla(193, 34%, 100%, 1) 10%, hsla(193, 34%, 100%, 0) 80%),
+    linear-gradient(315deg, hsla(182, 0%, 44%, 1) 100%, hsla(182, 0%, 44%, 0) 70%);
+}
+
+/**
+ * WEBSITE
+ */
+
+.website {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);    
+
+  width: 1024px;
+  height: 768px;
+  display: block;
+  
+  background-image: url(https://d13yacurqjgara.cloudfront.net/users/78637/screenshots/1023229/attachments/122802/Ultramarine_Admin_Bigger.jpg);
+  background-position: -70px -180px;
+}
+.website:after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, .5);
+}
+/**
+ * HELP / CONTAINER
+ */
+
+.help {
+  position: absolute;
+  top: 250px;
+  left: 305px;
+  width: 58px;
+  height: 58px;
+
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);    
+}
+
+/**
+ * THROBBER
+ */
+
+.throbber {
+  display: inline-block;
+  cursor: help;
+  background: transparent url(https://slack.global.ssl.fastly.net/20646/img/tip_throbber.png) no-repeat center center;
+  width: 58px;
+  height: 58px;
+  
+  -webkit-animation: throb .5s steps(12) alternate infinite;
+     -moz-animation: throb .5s steps(12) alternate infinite;
+          animation: throb .5s steps(12) alternate infinite;
+}
+
+@-webkit-keyframes throb{
+  from  {background-position:    0px 0px }
+  to    {background-position: -696px 0px }
+}
+@-moz-keyframes throb{
+  from  {background-position:    0px 0px }
+  to    {background-position: -696px 0px }
+}
+@keyframes throb{
+  from  {background-position:    0px 0px }
+  to    {background-position: -696px 0px }
+}
+
+/**
+ * TIP BOX
+ */
+
+.tip {
+  display: none;
+  background-color: white;
+  color: #333;
+  width: 500px;
+  box-shadow: 2px 5px 15px rgba(0,0,0, .5);
+
+  position: absolute;
+  top: 16px;
+  left: 100%;
+  
+  -webkit-transform: translateX(10px);
+     -moz-transform: translateX(10px);
+      -ms-transform: translateX(10px);
+       -o-transform: translateX(10px);
+          transform: translateX(10px);
+  
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+}
+.tip:before {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 10px 12px 10px 0;
+  border-color: transparent #ffffff transparent transparent;  
+
+  position: absolute;
+  top: 20px;
+  left: 0;
+
+  -webkit-transform: translateX(-100%);
+     -moz-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+       -o-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.tip > div {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+}
+.tip > div:before {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 64px;
+
+  background: transparent url(https://slack.global.ssl.fastly.net/19925/img/landing_slack_hash_logo_@2x.png) no-repeat top left;
+  background-size: contain;
+  
+  opacity: .25;
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
+  -webkit-transform: translate(-16px, 16px);
+     -moz-transform: translate(-16px, 16px);
+      -ms-transform: translate(-16px, 16px);
+       -o-transform: translate(-16px, 16px);
+          transform: translate(-16px, 16px);
+}
+
+/* --------------------------------------------------------------------------
+   HEADER
+   -------------------------------------------------------------------------- */
+
+.tip header {
+  padding: 0 0 .5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-bottom: .5rem;
+  border-bottom: 1px solid #0099FF;
+}
+
+.tip header a[rel=close] {
+  text-decoration: none;
+  color: #999;
+  float: right;
+  cursor: pointer;
+}
+.tip header a[rel=close]:hover {
+  color: #09F;
+}
+
+/* --------------------------------------------------------------------------
+   MAIN
+   -------------------------------------------------------------------------- */
+
+.tip main {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER
+   -------------------------------------------------------------------------- */
+
+.tip footer {
+  margin-top: 24px;
+}
+.tip footer a {
+  color: #336699;
+  text-decoration: none;
+}
+.tip footer a:hover {
+  color: #0099FF;
+}
+.tip footer > a {
+  float: right;
+  text-decoration: none;
+  display: inline-block;
+  padding: 7px 20px;
+  font-size: small;
+  background-color: #336699;
+  color: white;
+  cursor: pointer;
+  text-shadow: 0 1px rgba(0,0,0, .2);
+
+  -webkit-font-smoothing: antialiased;
+     -moz-font-smoothing: antialised;
+      -ms-font-smoothing: antialised;
+       -o-font-smoothing: antialised;
+          font-smoothing: antialised;
+
+  -webkit-transition: all 500ms ease-in-out;
+     -moz-transition: all 500ms ease-in-out;
+       -o-transition: all 500ms ease-in-out;
+          transition: all 500ms ease-in-out;
+
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+.tip footer > a:hover {
+  background-color: #0099FF;
+  color: #FFFFFF;
+}
+
+.flipOutY,
+.flipInY {
+  display: block;
+}
