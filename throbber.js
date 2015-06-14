@@ -1,6 +1,5 @@
 /*!
  * throbber.js v0.0.1
- * Copyright 2014 Open Exchange Rates
  *
  * Dynamic, configurable usage of: http://codepen.io/AlcidesRC/pen/gafno
  *
