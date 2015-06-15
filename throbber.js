@@ -5,6 +5,26 @@
  *
  */
 
+/* 
+ * Config is expected to be of the form:
+
+ {
+  "cookieName": String, // The name of the cookie that will store state
+  "elements": [
+    {
+      "$el": jQuery Element,
+      "title": String,
+      "content": String,
+      "beforeShow": Function
+      "afterShow": Function
+      "beforeExit": Function
+      "afterExit": Function
+    },
+    ...
+  ]
+ }
+
+ */
 (function(root, undefined) {
 
   function hasClass(ele, cls) {
