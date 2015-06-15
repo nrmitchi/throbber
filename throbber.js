@@ -15,6 +15,7 @@
       "$el": jQuery Element,
       "title": String,
       "content": String,
+      "createdAt": Date,
       "beforeShow": Function
       "afterShow": Function
       "beforeExit": Function
@@ -59,10 +60,34 @@
     addClass(tip, 'flipOutY');
   });
 
+  // These are the default behaviour settings that are applied
+  lib.settings = {
+    isExpired: function (element) {
+      // Todo: Check element.createdAt against current time to see if it's expired
+      return false
+    }
+  };
+
   lib.activate = function (config) {
     // Inject throbber elements on the last x element in the config, as 
     // long as the cookie doesn't have them as dismissed
-  }
+    var arrayLength = config.elements.length;
+    for (var i = 0; i < arrayLength; i++) {
+        var element = config.elements[i]
+
+        // Check dismissed status
+
+        // Check isExpired
+        if (lib.settings.isExpired(element)) {
+          continue;
+        }
+        //Do something
+    }
+  };
+
+  lib.inject = function (element) {
+    // `element` is expected to conform the the Element structure above
+  };
 
   /* --- Module Definition --- */
 
